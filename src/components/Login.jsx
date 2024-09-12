@@ -10,6 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
   // function to handle login
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,11 +18,17 @@ const Login = () => {
       const response = await loginUser({ email, password });
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard');
-      toast("Login success")
+      toast("Login success");
     } catch (err) {
       toast('Incorrect userID or Password');
     }
   };
+
+  // function to navigate to forgot password page
+  const handleForgotPassword = () => {
+    navigate('/forgot-password');
+  };
+
   // UI code for login page
   return (
     <div className="container mt-5">
@@ -53,6 +60,15 @@ const Login = () => {
         </div>
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
+      <div className="mt-3">
+        <button
+          type="button"
+          className="btn btn-link"
+          onClick={handleForgotPassword}
+        >
+          Forgot Password?
+        </button>
+      </div>
       <ToastContainer />
     </div>
   );
