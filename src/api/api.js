@@ -1,7 +1,7 @@
 import axios from 'axios';
 // created base url
 const api = axios.create({
-  baseURL: 'https://urlshorten-backend-p7yy.onrender.com',
+  baseURL: 'https://urlshorten-backend-lme8.onrender.com',
 });
 // initiated all api calls for the applications
 export const registerUser = (data) => api.post('/auth/register', data);
