@@ -16,8 +16,8 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
       await resetPassword(token, { newPassword });
-      navigate('/login');
       toast('Password changed successfully')
+      navigate('/login');
     } catch (err) {
       toast("Error in setting up new password");
     }

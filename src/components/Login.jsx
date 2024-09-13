@@ -17,8 +17,8 @@ const Login = () => {
     try {
       const response = await loginUser({ email, password });
       localStorage.setItem('token', response.data.token);
-      navigate('/dashboard');
       toast("Login success");
+      navigate('/dashboard');
     } catch (err) {
       toast('Incorrect userID or Password');
     }
