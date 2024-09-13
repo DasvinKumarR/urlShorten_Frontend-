@@ -23,8 +23,6 @@ const ForgotPassword = () => {
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Forgot Password</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
-      {message && <div className="alert alert-success">{message}</div>}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Email</label>
