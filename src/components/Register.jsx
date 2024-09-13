@@ -18,8 +18,9 @@ const Register = () => {
     try {
       await registerUser({ email, firstName, lastName, password });
       toast("Register success, activation mail send to registered email");
-      await delay(2000);
-      navigate('/login');
+      setTimeout(() => {
+        navigate('/login');
+      }, 3000);
     } catch (err) {
       toast("user not registered or user already registered");
     }
