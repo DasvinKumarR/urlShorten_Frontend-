@@ -17,7 +17,9 @@ const ResetPassword = () => {
     try {
       await resetPassword(token, { newPassword });
       toast('Password changed successfully')
-      navigate('/login');
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000);
     } catch (err) {
       toast("Error in setting up new password");
     }
